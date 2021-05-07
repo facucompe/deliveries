@@ -18,5 +18,6 @@ module Deliveries
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.autoload_paths += Dir[File.join(Rails.root, "lib", "extensions", "**", "*.rb")].each {|l| require l }
   end
 end
