@@ -28,6 +28,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
+gem 'versionist', '~> 2.0.1'
+
+gem 'ruby-kafka', '~> 1.3.0'
+
+gem 'sidekiq', '~> 6.2.1'
+
 gem 'fedex', '~> 3.10.11'
 
 group :development, :test do
@@ -35,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   gem 'rspec-rails', '~> 5.0.0'
+
+  gem 'faker'
   
   gem 'rubocop', '~> 1.14.0'
   gem 'rubocop-performance', '~> 1.11.3'
