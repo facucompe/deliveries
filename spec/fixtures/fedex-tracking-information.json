@@ -1,0 +1,209 @@
+{
+    "notification": {
+        "severity": "SUCCESS",
+        "source": "trck",
+        "code": 0,
+        "message": "Request was successfully processed.",
+        "localized_message": "Request was successfully processed."
+    },
+    "tracking_number": 449044304137821,
+    "tracking_number_unique_identifier": "2456661000~581190049992~FX",
+    "status_code": "OC",
+    "status_description": "Shipment information sent to FedEx",
+    "service_commit_message": "Shipping label has been created. The status will be updated when shipment begins to travel.",
+    "carrier_code": "FDXG",
+    "other_identifiers": [
+        {
+            "value": 115380173,
+            "type": "CUSTOMER_REFERENCE"
+        },
+        {
+            "value": "DMWsGWdnN",
+            "type": "GROUND_SHIPMENT_ID"
+        }
+    ],
+    "service_info": "FedEx Home Delivery",
+    "service_type": "GROUND_HOME_DELIVERY",
+    "package_weight": {
+        "units": "LB",
+        "value": 3.0
+    },
+    "package_dimensions": {
+        "length": 14,
+        "width": 11,
+        "height": 5,
+        "units": "IN"
+    },
+    "packaging": "Package",
+    "packaging_type": "YOUR_PACKAGING",
+    "package_sequence_number": 1,
+    "package_count": 1,
+    "shipper_address": {
+        "city": "JEFFERSONVILLE",
+        "state_or_province_code": "IN",
+        "country_code": "US",
+        "residential": false
+    },
+    "origin_location_address": {
+        "city": "JEFFERSONVILLE",
+        "state_or_province_code": "IN",
+        "country_code": "US",
+        "residential": false
+    },
+    "ship_timestamp": "2020-08-15T00:00:00",
+    "destination_address": {
+        "city": "Miami",
+        "state_or_province_code": "FL",
+        "country_code": "US",
+        "residential": false
+    },
+    "signature_proof_of_delivery_available": false,
+    "redirect_to_hold_eligibility": "INELIGIBLE",
+    "events": [
+        {
+            "timestamp": "2014-02-06T21:21:00+01:00",
+            "event_type": "CD",
+            "event_description": "Clearance delay - Import",
+            "status_exception_code": "R0019",
+            "status_exception_description": "Goods are subject to regulatory review.",
+            "address": {
+                "city": "ROISSY CHARLES DE GAULLE CEDEX",
+                "postal_code": "95702",
+                "country_code": "FR",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-06T21:16:00+01:00",
+            "event_type": "IT",
+            "event_description": "In transit",
+            "status_exception_code": "71",
+            "status_exception_description": "Package available for clearance",
+            "address": {
+                "city": "ROISSY CHARLES DE GAULLE CEDEX",
+                "postal_code": "95702",
+                "country_code": "FR",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-06T20:09:00+01:00",
+            "event_type": "CD",
+            "event_description": "Clearance delay - Import",
+            "address": {
+                "city": "ROISSY CHARLES DE GAULLE CEDEX",
+                "postal_code": "95702",
+                "country_code": "FR",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-06T18:44:00+01:00",
+            "event_type": "AR",
+            "event_description": "Arrived at FedEx location",
+            "address": {
+                "city": "ROISSY CHARLES DE GAULLE CEDEX",
+                "postal_code": "95702",
+                "country_code": "FR",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-06T06:26:00-05:00",
+            "event_type": "IT",
+            "event_description": "In transit",
+            "address": {
+                "city": "INDIANAPOLIS",
+                "state_or_province_code": "IN",
+                "postal_code": "46241",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-06T05:52:00-05:00",
+            "event_type": "DP",
+            "event_description": "Departed FedEx location",
+            "address": {
+                "city": "INDIANAPOLIS",
+                "state_or_province_code": "IN",
+                "postal_code": "46241",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-06T00:53:00-05:00",
+            "event_type": "IT",
+            "event_description": "In transit",
+            "address": {
+                "city": "INDIANAPOLIS",
+                "state_or_province_code": "IN",
+                "postal_code": "46241",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-05T13:08:00-05:00",
+            "event_type": "AR",
+            "event_description": "Arrived at FedEx location",
+            "address": {
+                "city": "INDIANAPOLIS",
+                "state_or_province_code": "IN",
+                "postal_code": "46241",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-05T00:48:00-05:00",
+            "event_type": "SE",
+            "event_description": "Shipment exception",
+            "status_exception_code": "84",
+            "status_exception_description": "Delay beyond our control",
+            "address": {
+                "city": "HEBRON",
+                "state_or_province_code": "KY",
+                "postal_code": "41048",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-04T21:30:00-05:00",
+            "event_type": "DP",
+            "event_description": "Left FedEx origin facility",
+            "address": {
+                "city": "LOVELAND",
+                "state_or_province_code": "OH",
+                "postal_code": "45140",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "ORIGIN_FEDEX_FACILITY"
+        },
+        {
+            "timestamp": "2014-02-04T16:09:00-05:00",
+            "event_type": "PU",
+            "event_description": "Picked up",
+            "address": {
+                "city": "LOVELAND",
+                "state_or_province_code": "OH",
+                "postal_code": "45140",
+                "country_code": "US",
+                "residential": "false"
+            },
+            "arrival_location": "PICKUP_LOCATION"
+        }
+    ]
+}
