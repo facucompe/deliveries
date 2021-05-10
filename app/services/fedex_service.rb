@@ -3,10 +3,15 @@ class FedexService
     include FedexHomologator
 
     def track_delivery(tracking_number)
+      retries ||= 0
       fedex_delivery = client.track(tracking_number: tracking_number)
       homologate_and_update_delivery(fedex_delivery.first)
     rescue Fedex::RateError
       raise NotFound
+    rescue SocketError
+      retries += 1
+      retry if retries <= 5
+      raise ServiceError
     end
 
     private

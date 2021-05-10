@@ -7,7 +7,7 @@ class TrackDeliveryWorker
       delivery = carrier_service(carrier).track_delivery(tracking_number)
       response.status = :OK
       response.delivery = delivery
-    rescue NotFound => e
+    rescue NotFound, ServiceError => e
       response.status = e.status
     end
     KafkaClient.produce_message(response.to_json, topic: deliveries_topic)

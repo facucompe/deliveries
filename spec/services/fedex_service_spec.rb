@@ -57,5 +57,15 @@ describe FedexService do
         expect { track_delivery }.to raise_error(NotFound)
       end
     end
+
+    describe 'when the connection with Fedex fails' do
+      let(:mock_tracking) do
+        allow_any_instance_of(Fedex::Shipment).to receive(:track).and_raise(SocketError)
+      end
+
+      it 'raises an error' do
+        expect { track_delivery }.to raise_error(ServiceError)
+      end
+    end
   end
 end

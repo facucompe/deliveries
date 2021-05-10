@@ -47,5 +47,17 @@ describe TrackDeliveryWorker do
         expect(KafkaClient).to have_received(:produce_message).with(response.to_json, topic: topic)
       end
     end
+
+    describe 'when the carrier service fails' do
+      let(:mock_fedex_service) do
+        allow(FedexService).to receive(:track_delivery).and_raise(ServiceError)
+      end
+
+      it 'queues a message in kafka with NOT_FOUND status' do
+        response = Kafka::DeliveryTrackingResponse.new(carrier, tracking_number,
+                                                       status: :SERVICE_ERROR)
+        expect(KafkaClient).to have_received(:produce_message).with(response.to_json, topic: topic)
+      end
+    end
   end
 end
