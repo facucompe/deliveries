@@ -5,6 +5,8 @@ class FedexService
     def track_delivery(tracking_number)
       fedex_delivery = client.track(tracking_number: tracking_number)
       homologate_and_update_delivery(fedex_delivery.first)
+    rescue Fedex::RateError
+      raise NotFound
     end
 
     private
@@ -23,7 +25,7 @@ class FedexService
     end
 
     def find_or_initialize_delivery(tracking_number)
-      Delivery.find_or_initialize_by(tracking_number: tracking_number, carrier: :fedex)
+      Delivery.find_or_initialize_by(tracking_number: tracking_number, carrier: :FEDEX)
     end
 
     def client

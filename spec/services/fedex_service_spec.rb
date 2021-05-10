@@ -35,7 +35,7 @@ describe FedexService do
 
     describe 'when the delivery was tracked before' do
       let(:delivery) do
-        create(:delivery, tracking_number: tracking_number, carrier: :fedex, status: :created)
+        create(:delivery, tracking_number: tracking_number, carrier: :FEDEX, status: :created)
       end
 
       before do
@@ -45,6 +45,16 @@ describe FedexService do
 
       it 'updates the delivery' do
         expect(delivery.reload.status.to_sym).to eq(:on_transit)
+      end
+    end
+
+    describe 'when it does not find the delivery' do
+      let(:mock_tracking) do
+        allow_any_instance_of(Fedex::Shipment).to receive(:track).and_raise(Fedex::RateError)
+      end
+
+      it 'raises an error' do
+        expect { track_delivery }.to raise_error(NotFound)
       end
     end
   end

@@ -52,3 +52,6 @@ RSpec/VerifiedDoubles:
 
 RSpec/NestedGroups:
   Max: 3
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 7
