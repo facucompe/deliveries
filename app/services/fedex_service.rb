@@ -16,18 +16,22 @@ class FedexService
 
     private
 
+    # rubocop:disable Layout/HashAlignment, Metrics/MethodLength
     def homologate_and_update_delivery(fedex_delivery)
       delivery = find_or_initialize_delivery(fedex_delivery.tracking_number)
       delivery.assign_attributes(
-        status: status(fedex_delivery), package_weigth_unit: weight_unit(fedex_delivery),
-        package_weigth: weight(fedex_delivery),
-        package_dimensions_unit: dimension_unit(fedex_delivery),
-        package_length: length(fedex_delivery), package_width: width(fedex_delivery),
-        package_heigth: heigth(fedex_delivery)
+        status:                   status(fedex_delivery),
+        package_weigth_unit:      weight_unit(fedex_delivery),
+        package_weigth:           weight(fedex_delivery),
+        package_dimensions_unit:  dimension_unit(fedex_delivery),
+        package_length:           length(fedex_delivery),
+        package_width:            width(fedex_delivery),
+        package_heigth:           heigth(fedex_delivery)
       )
       delivery.save
       delivery
     end
+    # rubocop:enable Layout/HashAlignment, Metrics/MethodLength
 
     def find_or_initialize_delivery(tracking_number)
       Delivery.find_or_initialize_by(tracking_number: tracking_number, carrier: :FEDEX)
