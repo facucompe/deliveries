@@ -25,7 +25,7 @@ module FedexHomologator
   end
 
   def weight_unit(delivery)
-    WEIGHT_UNITS[delivery.details[:package_weight][:units].to_sym]
+    WEIGHT_UNITS[delivery.details.dig(:package_weight, :units).to_sym]
   end
 
   def weight(delivery)
@@ -33,18 +33,18 @@ module FedexHomologator
   end
 
   def dimension_unit(delivery)
-    DIMENSION_UNITS[delivery.details[:package_dimensions][:units].to_sym]
+    DIMENSION_UNITS[delivery.details.dig(:package_dimensions, :units).to_sym]
   end
 
   def length(delivery)
-    delivery.details[:package_dimensions][:length].to_f
+    delivery.details.dig(:package_dimensions, :length).to_f
   end
 
   def width(delivery)
-    delivery.details[:package_dimensions][:width].to_f
+    delivery.details.dig(:package_dimensions, :width).to_f
   end
 
   def heigth(delivery)
-    delivery.details[:package_dimensions][:height].to_f
+    delivery.details.dig(:package_dimensions, :height).to_f
   end
 end
