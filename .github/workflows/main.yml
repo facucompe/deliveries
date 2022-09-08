@@ -37,7 +37,7 @@ jobs:
       - name: Deploy Stage
         uses: fjogeleit/http-request-action@v1
         with:
-          url: 'https://hooks.slack.com/services/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'
+          url: ${{ secrets.SLACK_WEBHOOK_URL}}
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
           data: '{"text": "HOlAAaaaaaaAA"}'
