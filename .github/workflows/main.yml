@@ -40,7 +40,7 @@ jobs:
           github-token: ${{ github.token }}
           sha: ${{ github.event.pull_request.head.sha }}
       
-      - run: echo ${{ steps.PR.outputs.number }}
+      - run: echo "Hola ${{ steps.PR.outputs.number }}"
 
       - run: echo "variable de github action ${{ github.event.pull_request.title }}"
       
