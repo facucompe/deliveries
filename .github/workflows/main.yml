@@ -35,11 +35,12 @@ jobs:
           echo test, and deploy your project.
 
       - name: PR
-        uses: 8BitJonny/gh-get-current-pr@1.4.0
+        uses: 8BitJonny/gh-get-current-pr@2.1.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          sha: 79fd6e1deed23312f70e2dd53c9e85a7f9b30d23
       
-      - run: echo "Hola ${{ steps.PR.outputs.number }}, token ${{ github.token }}"
+      - run: echo "Hola ${{ steps.PR.outputs }}, token ${{ github.token }}"
 
       - run: echo "variable de github action ${{ github.event.pull_request.title }}"
       
