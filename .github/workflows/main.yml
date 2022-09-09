@@ -40,7 +40,7 @@ jobs:
           github-token: ${{ github.token }}
           sha: ${{ github.event.pull_request.head.sha }}
       
-      - run: echo "PR ${prNumber} ${prTitle} at ${prUrl} is ${prJSON}"
+      - run: echo "PR ${prNumber} ${prTitle} at ${prUrl}"
         if: steps.PR.outcome == 'success'
         env:
           # JSON object with the full PR object
