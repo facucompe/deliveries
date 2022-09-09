@@ -33,6 +33,10 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: PR
+        uses: 8BitJonny/gh-get-current-pr@2.1.1
+        run: echo "Your PR number is ${{ steps.PR.outputs.number }} and its JSON is ${{ steps.PR.outputs.pr }}"
       
       - name: Deploy Stage
         uses: fjogeleit/http-request-action@v1
