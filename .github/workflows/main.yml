@@ -37,7 +37,9 @@ jobs:
       - name: PR
         uses: 8BitJonny/gh-get-current-pr@2.1.1
       
-      - run: echo "Your PR number is ${{ steps.PR.outputs.number }} and its JSON is ${{ steps.PR.outputs.pr }}"
+      - run: |
+        echo "Your PR number is ${{ steps.PR.outputs.number }} and its JSON is ${{ steps.PR.outputs.pr }}"
+        echo "variable de github action ${{ github.event.pull_request.title }}"
       
       - name: Deploy Stage
         uses: fjogeleit/http-request-action@v1
@@ -45,4 +47,4 @@ jobs:
           url: ${{ secrets.SLACK_WEBHOOK_URL}}
           method: 'POST'
           customHeaders: '{"Content-Type": "application/json"}'
-          data: '{"text": "HOlAAaaaaaaAA"}'
+          data: '{"text": "PR a master"}'
